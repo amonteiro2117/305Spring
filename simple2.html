@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favorite Programming Languages</title>
+</head>
+<body>
+    <h1>Favorite Programming Languages</h1>
+    
+    <ul id="language-list">
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>C++</li>
+        <li>Java</li>
+        <li>Rust</li>
+        <li>Asteroid</li> <!-- Manually added language -->
+    </ul>
+    
+    <input type="text" id="new-language-input">
+    <button onclick="addLanguage()">Add Language</button>
+    
+    <script>
+        function addLanguage() {
+            var input = document.getElementById("new-language-input");
+            var language = input.value;
+            
+            if (language !== "") {
+                var list = document.getElementById("language-list");
+                var newLanguage = document.createElement("li");
+                newLanguage.appendChild(document.createTextNode(language));
+                list.appendChild(newLanguage);
+                
+                input.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
